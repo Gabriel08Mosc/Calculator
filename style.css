@@ -21,7 +21,8 @@ body{
 
 /* Calculator styling: fixed width, dark translucent background, rounded corners */
 #calculator {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     background: rgba(30,30,30,0.85);
     border-radius: 15px;
     padding: 20px;
