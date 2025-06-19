@@ -63,6 +63,8 @@ body{
 
 /* Buttons container using CSS grid for 4 columns and fixed row height */
 #buttons {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
     width:100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
