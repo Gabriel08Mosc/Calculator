@@ -1,0 +1,145 @@
+/* Reset default margin, padding and set box-sizing for all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body background with a diagonal gradient */
+body{
+     background: linear-gradient(135deg, #1e3c72, #f5f5f5);
+}
+
+/* Main container fills viewport height and centers content */
+#container{
+    height: 100vh;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Calculator styling: fixed width, dark translucent background, rounded corners */
+#calculator {
+    width: 400px;
+    background: rgba(30,30,30,0.85);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Display area styling: fixed height, light transparent background, rounded corners */
+#display{
+    height: 80px;
+    width: 95%;
+    justify-self: center;
+    margin: 5px;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2.4rem;
+    font-weight: bold;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.6), inset 0 -2px 5px rgba(255, 255, 255, 0.05);
+    font-family: 'Courier New', monospace;
+}
+
+/* Text inside display with smooth font size transition */
+#display-text {
+  display: inline-block;
+  white-space: nowrap;
+  transition: font-size 0.1s ease-out;
+}
+
+/* Buttons container using CSS grid for 4 columns and fixed row height */
+#buttons {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 70px;
+    gap: 20px;
+}
+
+/* General button styles: full size, rounded corners, dark background */
+button {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #444;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Smooth transitions for background, transform and shadow */
+    transition: background-color 0.3s ease transform 0.3 ease box-shadow 0.1s;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Operator buttons styling: darker background with orange color */
+.operator{
+    background-color: #2c2c2c;
+    color: #ffa500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.6);
+}
+
+/* Cancel button styling (same as operator) */
+.cancel{
+    background-color: #2c2c2c;
+    color: #ffa500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.6);
+}
+
+/* Reset button styling (same as operator) */
+.reset{
+    background-color: #2c2c2c;
+    color: #ffa500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.6);
+}
+
+/* Equals button styling (same as operator) */
+.equals{
+    background-color: #2c2c2c;
+    color: #ffa500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0 ,0.6);
+}
+
+/* Hover effect for all buttons: lighter background and slight scaling */
+button:hover{
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Active (pressed) state: darker background, slight downward movement, inner shadow */
+button:active{
+    background-color: #333;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba( 0, 0, 0, 0.4), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Active states for operator buttons: same downward movement with stronger inner shadow */
+.operator:active{
+    transform: translateY(2px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.cancel:active{
+    transform: translateY(2px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.equals:active{
+    transform: translateY(2px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}

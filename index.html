@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Metadata and page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external stylesheet -->
+    <link  rel="stylesheet" href="style.css">
+    <title>calculator</title>
+</head>
+<body>
+      <!-- Main container for the calculator -->
+    <div id="container">
+        <!-- Calculator interface -->
+        <div id="calculator">
+            <!-- Display area for showing input and results -->
+            <div id="display"><span id="display-text"></span></div>
+            <!-- Buttons container -->
+            <div id="buttons">
+
+                <!-- Reset button to clear all input -->
+                <button class="reset">AC</button>
+
+                <!-- Percentage operator button -->
+                <button class="operator">%</button>
+
+                 <!-- Cancel (clear last entry) button -->
+                <button class="cancel">C</button>
+
+                <!-- Division operator button -->
+                <button class="operator">:</button>
+
+                    <button class="number">7</button>
+                    <button class="number">8</button>
+                    <button class="number">9</button>
+
+                <!-- Multiplication operator button -->
+                <button class="operator">x</button>
+
+                    <button class="number">4</button>
+                    <button class="number">5</button>
+                    <button class="number">6</button>
+
+                <!-- Subtraction operator button -->
+                <button class="operator">-</button>
+                    <button class="number">1</button>
+                    <button class="number">2</button>
+                    <button class="number">3</button>
+
+                <!-- Addition operator button -->
+                <button class="operator">+</button>
+
+                    <!-- Double zero and zero buttons -->
+                    <button class="number">00</button>
+                    <button class="number">0</button>
+
+                    <!-- Decimal separator button (comma) -->
+                    <button class="number">,</button>
+
+                <!-- Equals button to compute the result -->
+                <button class="equals">=</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file controlling calculator logic -->
+    <script src="script.js"></script>
+
+</body>
+</html>
