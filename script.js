@@ -21,10 +21,8 @@ function isOperator(char) {
   return operatorSymbols.includes(char);
 }
 
-// Add click event listeners to number buttons
-numbers.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Prevent input if max length is reached
+function ClickNumbers(){
+   // Prevent input if max length is reached
     if (expression.length >= maxLength) return;
 
     // Append clicked number to the expression string
@@ -32,13 +30,11 @@ numbers.forEach(btn => {
 
     // Update the calculator display
     displayText.textContent = expression;
-  });
-});
+}
 
-// Add click event listeners to operator buttons
-operators.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Prevent starting expression with an operator
+function ClickOperators(){
+
+   // Prevent starting expression with an operator
     if (expression.length === 0) return;
 
     // Prevent input if max length is reached
@@ -58,24 +54,24 @@ operators.forEach(btn => {
 
     // Update the display with the new expression
     displayText.textContent = expression;
-  });
-});
+}
 
-// Cancel (C) button: remove the last character from expression
-cancel.addEventListener("click", () => {
+function ClickCancel(){
+  
   expression = expression.slice(0, -1); // Remove last character
   displayText.textContent = expression; // Update display
-});
+}
 
-// Reset (AC) button: clear the entire expression
-reset.addEventListener("click", () => {
-  expression = "";                      // Clear expression string
+function ClickReset(){
+
+   expression = "";                      // Clear expression string
   displayText.textContent = expression; // Clear display
-});
+  
+}
 
-// Equals (=) button: evaluate the expression and display the result
-equal.addEventListener("click", () => {
-  if (expression.length === 0) return; // If empty, do nothing
+function ClickEqual(){
+
+    if (expression.length === 0) return; // If empty, do nothing
 
   try {
     // Replace calculator-specific symbols with JavaScript operators
@@ -111,4 +107,26 @@ equal.addEventListener("click", () => {
     // Reset the expression
     expression = "";
   }
+}
+// Add click event listeners to number buttons
+numbers.forEach(btn => {
+  
+  btn.addEventListener("pointerdown", ClickNumbers);
+  
 });
+
+// Add click event listeners to operator buttons
+operators.forEach(btn => {
+  
+  btn.addEventListener("pointerdown", ClickOperators);
+  
+});
+
+// Cancel (C) button: remove the last character from expression
+cancel.addEventListener("pointerdown", ClickCancel);
+
+// Reset (AC) button: clear the entire expression
+reset.addEventListener("pointerdown", ClickReset);
+
+// Equals (=) button: evaluate the expression and display the result
+equal.addEventListener("pointerdown", ClickEqual);
