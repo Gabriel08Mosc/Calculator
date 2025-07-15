@@ -111,22 +111,22 @@ function ClickEqual(){
 // Add click event listeners to number buttons
 numbers.forEach(btn => {
   
-  btn.addEventListener("pointerdown", ClickNumbers);
+  btn.addEventListener("pointerup", ClickNumbers);
   
 });
 
 // Add click event listeners to operator buttons
 operators.forEach(btn => {
   
-  btn.addEventListener("pointerdown", ClickOperators);
+  btn.addEventListener("pointerup", ClickOperators);
   
 });
 
 // Cancel (C) button: remove the last character from expression
-cancel.addEventListener("pointerdown", ClickCancel);
+cancel.addEventListener("pointerup", ClickCancel);
 
 // Reset (AC) button: clear the entire expression
-reset.addEventListener("pointerdown", ClickReset);
+reset.addEventListener("pointerup", ClickReset);
 
 // Equals (=) button: evaluate the expression and display the result
-equal.addEventListener("pointerdown", ClickEqual);
+equal.addEventListener("pointerup", ClickEqual);
