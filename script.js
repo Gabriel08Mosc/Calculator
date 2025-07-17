@@ -21,7 +21,10 @@ function isOperator(char) {
   return operatorSymbols.includes(char);
 }
 
-function ClickNumbers(){
+function ClickNumbers(event){
+
+  const btn = event.currentTarget;
+  
    // Prevent input if max length is reached
     if (expression.length >= maxLength) return;
 
@@ -32,8 +35,10 @@ function ClickNumbers(){
     displayText.textContent = expression;
 }
 
-function ClickOperators(){
+function ClickOperators(event){
 
+  const btn= event.currentTarget;
+  
    // Prevent starting expression with an operator
     if (expression.length === 0) return;
 
@@ -120,7 +125,7 @@ numbers.forEach(btn => {
 operators.forEach(btn => {
   
   btn.addEventListener("click", ClickOperators);
-   btn.addEventListener("touchstart", ClickNumbers);
+   btn.addEventListener("touchstart", ClickOperators);
   
 });
 
