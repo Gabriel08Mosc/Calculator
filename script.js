@@ -51,6 +51,8 @@ function ClickOperators(event){
     // If last character is already an operator,
     // replace it with the new operator (prevents multiple consecutive operators)
     if (isOperator(lastChar)) {
+      if(lastChar === newOperator) return;
+      
       expression = expression.slice(0, -1) + newOperator;
     } else {
       // Otherwise, simply append the new operator
@@ -117,7 +119,6 @@ function ClickEqual(){
 numbers.forEach(btn => {
   
   btn.addEventListener("click", ClickNumbers);
-   btn.addEventListener("touchstart", ClickNumbers);
   
 });
 
@@ -125,18 +126,14 @@ numbers.forEach(btn => {
 operators.forEach(btn => {
   
   btn.addEventListener("click", ClickOperators);
-   btn.addEventListener("touchstart", ClickOperators);
   
 });
 
 // Cancel (C) button: remove the last character from expression
 cancel.addEventListener("click", ClickCancel);
-cancel.addEventListener("touchstart", ClickCancel);
 
 // Reset (AC) button: clear the entire expression
 reset.addEventListener("click", ClickReset);
-reset.addEventListener("touchstart", ClickReset);
 
 // Equals (=) button: evaluate the expression and display the result
 equal.addEventListener("click", ClickEqual);
-equal.addEventListener("touchstart", ClickEqual);
