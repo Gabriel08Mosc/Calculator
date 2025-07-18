@@ -83,7 +83,7 @@ function ClickEqual(){
   try {
     // Replace calculator-specific symbols with JavaScript operators
     let sanitizedExpression = expression
-      .replace(/x/g, '*')    // Replace 'x' with '*'
+      .replace(/[\u0078\u00D7\u1D465]/g, '*')    // Replace 'x' with '*'
       .replace(/:/g, '/')    // Replace ':' with '/'
       .replace(/,/g, '.')    // Replace ',' with '.' for decimal point
       .replace(/%/g, '/100'); // Replace '%' with '/100' for percentage calculation
